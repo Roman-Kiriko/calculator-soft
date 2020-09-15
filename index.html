@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Cache-Control" content="private">
+    <meta name="referrer" content="strict-origin" />
+
+    <title>Калькулятор мягких окон</title>
+
+    <script src="https://use.fontawesome.com/526ead2a73.js"></script>
+</head>
+
+<body>
+    <div class="cube-loading" id="preloader">
+        <div class="caption">
+            <div class="cube-loader">
+                <div class="cube loader-1"></div>
+                <div class="cube loader-2"></div>
+                <div class="cube loader-4"></div>
+                <div class="cube loader-3"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="calculator">
+        <div class="container">
+            <div class="calculator__title">
+
+
+                <h1 class="text-center m-5">Калькулятор мягких окон</h1>
+            </div>
+            <form action="" id="form" class="needs-validation">
+                <div class="form ">
+                    <!-- Блок с избражением -->
+                    <div class="form__product-wrapper ">
+                        <div class="form__product">
+
+                            <div class="form__product-image text-center">
+                                <div class="form__product-image-wrapper" style="position: relative;">
+                                    <img src="./img/calculator/window-white.jpg" alt="Soft window" class="img-fluid">
+                                    <img src="./img/calculator/p.png" alt="Soft window" class="img-fluid"
+                                        style="position: absolute; left: 0">
+                                    <img src="./img/calculator/s-side.png" class="img-fluid" id="img-side"
+                                        style="position: absolute; left: 0">
+                                    <img src="./img/calculator/s-top.png" alt="mount-top" class="img-fluid" id="img-top"
+                                        style="position: absolute; left: 0">
+                                    <img src="./img/calculator/s-bottom.png" alt="mount-bottom" class="img-fluid"
+                                        id="img-bottom" style="position: absolute; left: 0">
+                                </div>
+
+                                <div class="form__product-height">
+                                    <input type="text" id="height" placeholder="Высота, мм" data-type="main"
+                                        pattern="\d+">
+                                </div>
+                                <div class="form__product-width">
+                                    <input type="text" id="width" placeholder="Ширина, мм" data-type="main"
+                                        pattern="\d+">
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Блок технической информации  -->
+                    <div class="form__tech-info  mb-5">
+                        <div class="form__tech-info-filling">
+                            <span>Заполнение проема</span>
+                            <div class="text-nowrap">
+                                <select name="" id="fillingAperture" class="w-200">
+                                    <option value="1340">Пленка 700 мкм</option>
+                                    <option value="4200">Полиуретан 1000 мкм</option>
+                                    <option value="900">Оксфорд</option>
+                                    <option value="1100">ПВХ 630гр/м</option>
+                                </select>
+                                <i class="fa fa-question-circle" data-icon="fill"></i>
+                            </div>
+                        </div>
+                        <div class="form__tech-info-edging">
+                            <div class="form__tech-info-edging-material">
+                                <span>Материал окантовки</span>
+                                <div class="text-nowrap">
+                                    <select name="materialEdging" id="material-edging" class="w-200">
+                                        <option value="120">Ткань ПВХ 50мм</option>
+                                        <option value="180">Оксфорд 50мм</option>
+                                        <option value="160">Ткань ПВХ 80мм</option>
+                                        <option value="230">Оксфорд 80мм</option>
+                                    </select>
+                                    <i class="fa fa-question-circle" data-icon="edging"></i>
+                                </div>
+                            </div>
+                            <div class="form__tech-info-enging-color">
+                                <span>Цвет окантовки</span>
+                                <div class="text-nowrap">
+                                    <select name="colorEdging" id="colorEdging" class="w-200">
+                                        <option value="white">Белый</option>
+                                        <option value="brown">Коричневый</option>
+                                        <option value="green">Зеленый</option>
+                                        <option value="blue">Синий</option>
+                                        <option value="beige">Бежевый</option>
+                                    </select>
+                                    <i class="fa fa-question-circle" data-icon="color"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form__tech-info-mount mt-5">
+                            <div class="form__tech-info-mount-title text-center ">
+                                <h4>Крепление окна</h4>
+                            </div>
+                            <div class="form__tech-info-mount-block row">
+                                <div class="form__tech-info-mount-block-select-wrapper p-3 container-md">
+                                    <div class="form__tech-info-mount-block-select   ">
+                                        <div class="form__tech-info-mount-block-title ">Верх</div>
+                                        <div class="text-nowrap">
+                                            <select name="mountSelect" id="top-mount">
+                                                <option value="120">D-27(Скоба/ремешок)</option>
+                                                <option value="160">D-42(Пов.большая скоба)</option>
+                                                <option value="300">D-17(Франц.замок латунь)</option>
+                                                <option value="320">D-17(Франц. замок никель)</option>
+                                                <option value="10">D-12, D-10(Люверс несъемный)</option>
+                                                <option value="500">D-17(Франц.замок высокий)</option>
+                                                <option value="40">D-40(Люверс)</option>
+                                                <option value="0">Нет</option>
+                                            </select>
+                                            <i class="fa fa-question-circle" data-icon="mount"></i>
+                                        </div>
+
+                                    </div>
+                                    <div class="form__tech-info-mount-block-select   ">
+                                        <div class="form__tech-info-mount-block-title ">Стороны</div>
+                                        <div class="text-nowrap">
+                                            <select name="mountSelect" id="side-mount">
+                                                <option value="120">D-27(Скоба/ремешок)</option>
+                                                <option value="160">D-42(Пов.большая скоба)</option>
+                                                <option value="300">D-17(Франц.замок латунь)</option>
+                                                <option value="320">D-17(Франц. замок никель)</option>
+                                                <option value="10">D-12, D-10(Люверс несъемный)</option>
+                                                <option value="500">D-17(Франц.замок высокий)</option>
+                                                <option value="40">D-40(Люверс)</option>
+                                                <option value="0">Нет</option>
+                                            </select>
+                                            <i class="fa fa-question-circle" data-icon="mount"></i>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="form__tech-info-mount-block-select  ">
+                                        <div class="form__tech-info-mount-block-title ">Низ</div>
+                                        <div class="text-nowrap">
+                                            <select name="mountSelect" id="bottom-mount">
+                                                <option value="120">D-27(Скоба/ремешок)</option>
+                                                <option value="160">D-42(Пов.большая скоба)</option>
+                                                <option value="300">D-17(Франц.замок латунь)</option>
+                                                <option value="320">D-17(Франц. замок никель)</option>
+                                                <option value="10">D-12, D-10(Люверс несъемный)</option>
+                                                <option value="500">D-17(Франц.замок высокий)</option>
+                                                <option value="40">D-40(Люверс)</option>
+                                                <option value="0">Нет</option>
+                                            </select>
+                                            <i class="fa fa-question-circle" data-icon="mount"></i>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form__tech-info-mount-step-wrapper row mb-3">
+                                <div class="form__tech-info-mount-step-title col-md j-space-between">
+                                    Шаг крепления:
+                                    <input type="text" id="stepInput" class="w-200" data-type="main" placeholder="мм.">
+                                </div>
+                            </div>
+                            <div class="form__tech-info-mount-belts row mb-3">
+                                <div class="form__tech-info-mount-belts-title col-md j-space-between">
+                                    Ремни для скручивания
+                                    <div class="form__tech-info-moutn-belts-select">
+                                        <input type="text" id="beltsInput" class="w-200" data-type="main"
+                                            placeholder="шт.">
+                                        <select name="" id="belts-select" class="w-200">
+                                            <option value="220">Ремень с пряжкой</option>
+                                            <option value="120">Ремень из пленки</option>
+                                        </select>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form__tech-info-door ">
+                            <div class="form__tech-info-door-presence j-space-between mb-3">
+                                Наличие двери
+                                <input type="checkbox" id="doorPresence">
+                            </div>
+                            <div class="form__texh-info-door-filling j-space-between mb-3">
+                                Заполнение двери
+                                <select name="" id="filling-door" class="w-200">
+                                    <option value="1340">Пленка 700 мкм</option>
+                                    <option value="4200">Полиуретан 1000 мкм</option>
+                                    <option value="900">Оксфорд</option>
+                                    <option value="1100">ПВХ 630гр/м</option>
+                                </select>
+                            </div>
+
+                            <div class="form__tech-info-door-hardware-amount j-space-between mb-3">
+                                Количество молний
+                                <input type="number" min="1" max="2" class="w-200" id="zipper" data-type="door"
+                                    placeholder="шт.">
+                            </div>
+                            <div class="form__tech-info-door-width j-space-between mb-3">
+                                Ширина двери:
+                                <input type="text" id="doorWidth" class="w-200" data-type="door" placeholder="мм.">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Блок ввода комментария -->
+                    <div class="form__note">
+                        <textarea name="note" id="form-textarea" placeholder="Поле для комментария"></textarea>
+
+                        <div class="form__note-tech-info">
+                            <div class="form__note-tech-info-zamer">
+                                <input type="checkbox" id="zamer" name="zamer">
+                                <label for="zamer">Замер</label>
+                            </div>
+                            <div class="form__note-tech-info-mounting">
+                                <input type="checkbox" id="mounting" name="Mounting">
+                                <label for="mounting">Монтаж</label>
+                            </div>
+                            <div class="form__note-tech-info-delivery">
+                                <input type="checkbox" name="Delivery" id="delivery">
+                                <label for="delivery">Доставка</label>
+                                <input type="text" name="km" id="delivery-km" placeholder="км. от МКАД" class="w-200">
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Блок данных о клиенте -->
+                    <div class="form__data ">
+                        <div class="form__data-name">
+                            <input type="text" id="name" placeholder="Введите ваше имя!" data-type="user" required>
+                        </div>
+                        <div class="form__data-phone">
+                            <input type="tel" id="phone" placeholder="Введите ваш телефон!" data-type="user"
+                                pattern="\d+" required>
+                        </div>
+                    </div>
+
+                    <!-- Блок кнопок -->
+                    <div class="form__btn ">
+                        <input type="submit" value="Отправить" id="submit-btn" class="btn btn-success m-3">
+                        <input type="button" value="Сбросить" id="reset-btn" class="btn btn-danger m-3">
+                        <input type="button" value="Посчитать" id="calculate-btn" class="btn btn-primary m-3">
+                    </div>
+
+                </div>
+
+
+            </form>
+            <div class="calculator__output-price row mt-5">
+                <div class="calculator__output-price-title col-md-12 text-center">
+                    Расчет за <span class="calculator__output-price-title-amount">1</span> окно
+                </div>
+                <div class="calculator__output-price-block row ">
+                    <div class="calculator__output-price-block-product col-md">
+                        <span>Стоимость изделия:</span>
+                        <div class="calculator__output-price-block-product-output" data-output>
+                            0
+                        </div>
+                    </div>
+                    <div class="calculator__output-price-block-price-hardware col-md">
+                        Стоимость креплений:
+                        <div class="calculator__output-price-block-price-hardware-output" data-output>
+                            0
+                        </div>
+                    </div>
+                    <div class="calculator__output-price-block-price-door col-md">
+                        Стоимость двери:
+                        <div class="calculator__output-price-block-price-door-output" data-output>
+                            0
+                        </div>
+                    </div>
+                    <div class="calculator__output-price-block-price-moun col-md">
+                        Стоимость монтажа:
+                        <div class="calculator__output-price-block-price-mount-output" data-output>
+                            0
+                        </div>
+                    </div>
+                    <div class="calculator__output-price-block-price-delivery col-md">
+                        Стоимость доставки:
+                        <div class="calculator__output-price-block-price-delivery-output" data-output>
+                            0
+                        </div>
+                    </div>
+                    <div class="calculator__output-price-block-price col-md">
+                        Всего:
+                        <div class="calculator__output-price-block-price-output" data-output>
+                            0
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
